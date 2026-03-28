@@ -58,16 +58,23 @@ print(calculate_all_error(1, -1, datapoints))
 print(calculate_all_error(-1, 1, datapoints))
 
 # Tasks 8 and 9
-possible_ms = ['''your list comprehension here''']
-possible_bs = ['''your list comprehension here''']
-
+possible_ms = [i * 0.1 for i in range(-100, 101)]
+possible_bs = [i * 0.1 for i in range (-200, 200)]
 
 # Task 10
 datapoints = [(1, 2), (2, 0), (3, 4), (4, 4), (5, 3)]
-
+smallest_error = float('inf')
+best_m = 0
+best_b = 0
 
 # Tasks 11 and 12
-
-
+for m in possible_ms:
+    for b in possible_bs:
+        error = calculate_all_error(m, b, datapoints)
+        if error < smallest_error:
+            best_m = m
+            best_b = b
+            smallest_error = error
+print(best_m, best_b, smallest_error)
 
 # Task 13
