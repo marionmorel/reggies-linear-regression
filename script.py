@@ -78,3 +78,4 @@ for m in possible_ms:
 print(best_m, best_b, smallest_error)
 
 # Task 13
+print(get_y(0.4, 1.6, 6))
